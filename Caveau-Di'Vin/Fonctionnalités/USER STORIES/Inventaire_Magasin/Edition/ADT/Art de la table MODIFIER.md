@@ -1,0 +1,2 @@
+[Verre Modifier](Fonctionnalités/USER%20STORIES/Inventaire_Magasin/Edition/ADT/Verre/Verre%20Modifier.md)
+[Visage Modifier](Fonctionnalités/USER%20STORIES/Inventaire_Magasin/Edition/ADT/Visage/Visage%20Modifier.md)

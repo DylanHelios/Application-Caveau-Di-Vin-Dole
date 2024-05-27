@@ -1,0 +1,19 @@
+{
+  "alwaysUpdateLinks": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showLineNumber": true,
+  "userIgnoreFilters": [
+    "Images/"
+  ],
+  "livePreview": true,
+  "newLinkFormat": "absolute",
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "C:\\Users\\dylan\\Desktop\\FUN\\Application-Caveau-Di-vin-Dole\\Gestion de Projet\\Caveau-Di'Vin\\Images"
+}
