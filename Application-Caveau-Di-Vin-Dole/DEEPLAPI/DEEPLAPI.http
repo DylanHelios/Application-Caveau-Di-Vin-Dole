@@ -1,0 +1,6 @@
+@DEEPLAPI_HostAddress = http://localhost:5290
+
+GET {{DEEPLAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

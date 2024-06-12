@@ -1,0 +1,102 @@
+﻿<Window x:Class="CaveauDiVinDoleApplication.Views.Mode.CashierView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CaveauDiVinDoleApplication.Views.Mode"
+        mc:Ignorable="d"
+        Title="CashierView" Height="450" Width="800">
+    <Grid>
+        <!--#region Grid.ColumnDefinition -->
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--#endregion -->
+
+        <!--#region Title -->
+
+        <Label Content="CAISSE" 
+           Grid.ColumnSpan="4" 
+           HorizontalContentAlignment="Center"
+           VerticalContentAlignment="Center"
+           FontSize="30"
+           FontWeight="Black" Margin="92,3,105,1" Grid.Column="1"/>
+
+
+        <!--#endregion-->
+
+        <!--#region ListProduit -->
+
+        <ListView d:ItemsSource="{d:SampleData ItemCount=9}" Grid.ColumnSpan="3" Margin="1,4,9,9" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <!--#endregion-->
+
+        <!-- #Region CashierList -->
+
+        <ListView Grid.Column="4" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="8,9,8,11" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!--#endregion-->
+
+        <!--#region Previous Page -->
+
+        <Button Content="Page précédente" HorizontalAlignment="Left" Height="23" Grid.Row="4" VerticalAlignment="Top" Width="152" Click="PreviousPage" Grid.ColumnSpan="2" Margin="-12,13,0,0"/>
+
+        <!--#endregion-->
+
+        <!--#region Add Product -->
+
+        <Button Content="Ajouter un produit" HorizontalAlignment="Left" Height="22" Margin="4,95,0,0" Grid.Row="2" VerticalAlignment="Top" Width="130" Click="AddProduct" Grid.Column="3" Grid.ColumnSpan="2"/>
+
+
+        <!--#endregion-->
+
+        <!--#region Delete Product -->
+
+        <Button Content="Supprimer un produit" HorizontalAlignment="Left" Height="22" Margin="4,180,0,0" Grid.Row="2" VerticalAlignment="Top" Width="130" Click="RemoveProduct" Grid.Column="3" Grid.ColumnSpan="2"/>
+
+        <!--#endregion-->
+
+        <!--#region Finish Command -->
+
+        <Button Content="Terminer la commande" HorizontalAlignment="Left" Height="28" Margin="7,5,0,0" Grid.Row="4" VerticalAlignment="Top" Width="250" Click="FinishCommand" Grid.Column="4" Grid.ColumnSpan="2"/>
+
+        <!--#endregion-->
+
+        <!--#region Total -->
+
+        <TextBox Grid.Column="4" HorizontalContentAlignment="Right" Margin="13,11,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Total :" VerticalAlignment="Top" Width="120"/>
+        <TextBox Grid.Column="5" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
+
+        <!--#endregion-->
+
+
+    </Grid>
+
+</Window>
