@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic.TypesProducts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,22 @@ namespace CaveauDiVinDoleApplication.Views.Mode.ProductViews
         public ProductView()
         {
             InitializeComponent();
+            products.ItemsSource = Enum.GetNames(typeof(EnumProducts));
         }
 
         private void NextStep(object sender, RoutedEventArgs e)
         {
+            ComboBoxItem selectedItem = (ComboBoxItem)products.SelectedItem;
+
+            switch (products.SelectedItem.ToString()) 
+            {
+                case "Alcool":
+                    MessageBox.Show("Alcool");
+                    break;
+                case "Infusion":
+                    MessageBox.Show("Infusion");
+                    break;
+            }
 
         }
 
