@@ -1,4 +1,4 @@
-﻿using CaveauDiVinDoleApplication.Views.Mode.ProductViews;
+﻿using CaveauDiVinDoleApplication.Views.Mode.ProductForms;
 using System.Windows;
 
 namespace CaveauDiVinDoleApplication.Views.Mode
@@ -22,14 +22,14 @@ namespace CaveauDiVinDoleApplication.Views.Mode
 
         private void AddProduct(object sender, RoutedEventArgs e)
         {
-            ProductView productView = new ProductView();
+            ProductView productView = new ProductView(null);
             productView.Show();
             this.Close();
         }
 
         private void ModifyProduct(object sender, RoutedEventArgs e)
         {
-
+            /// todo
         }
     }
 }

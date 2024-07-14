@@ -1,46 +1,58 @@
-﻿using Logic.TypesProducts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CaveauDiVinDoleApplication.Views.Mode.ProductForms.ConsommablesViews;
+using CaveauDiVinDoleApplication.Views.Mode.ProductForms.VisagesViews;
+using CaveauDiVinDoleApplication.ViewsModel;
+using Logic.TypesProducts.Consommables;
+using Logic.TypesProducts;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Logic;
 
-namespace CaveauDiVinDoleApplication.Views.Mode.ProductViews
+namespace CaveauDiVinDoleApplication.Views.Mode.ProductForms
 {
     /// <summary>
     /// Logique d'interaction pour ProductView.xaml
     /// </summary>
     public partial class ProductView : Window
     {
-        public ProductView()
+        #region Property
+
+        private ProductViewModel productViewModel;
+
+        #endregion
+
+        public ProductView(Product? product)
         {
             InitializeComponent();
-            products.ItemsSource = Enum.GetNames(typeof(EnumProducts));
+            productViewModel = new ProductViewModel(product);
+            DataContext = productViewModel;
         }
 
         private void NextStep(object sender, RoutedEventArgs e)
         {
-            ComboBoxItem selectedItem = (ComboBoxItem)products.SelectedItem;
-
-            switch (products.SelectedItem.ToString()) 
+            switch (productViewModel.SelectedOption)
             {
                 case "Alcool":
-                    MessageBox.Show("Alcool");
+                    Wine wine = new Wine();
+                    CallConsommableView(wine);
                     break;
                 case "Infusion":
-                    MessageBox.Show("Infusion");
+                    Infusion infusion = new Infusion();
+                    CallConsommableView(infusion);
+                    break;
+                case "Saucisson":
+                    Saucisson saucisson = new Saucisson();
+                    CallConsommableView(saucisson);
+                    break;
+                case "Visage":
+                    CallVisageView();
                     break;
             }
 
+            ///ERREUR TODO
+            this.Close();
+
         }
+
+        #region WindowCall
 
         private void PreviousPage(object sender, RoutedEventArgs e)
         {
@@ -49,6 +61,18 @@ namespace CaveauDiVinDoleApplication.Views.Mode.ProductViews
             this.Close();
         }
 
+        private void CallConsommableView(Consommable consommable)
+        {
+            ConsommableView consommableView = new ConsommableView(consommable);
+            consommableView.Show();
+        }
 
+        private void CallVisageView()
+        {
+            VisageView visageView = new VisageView();
+            visageView.Show();
+        }
+
+        #endregion
     }
 }

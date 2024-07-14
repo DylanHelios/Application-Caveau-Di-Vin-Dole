@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logic.TypesProducts
 {
-    public class Consommable : Product
+    public abstract class Consommable : Product
     {
         #region Attributes
         private bool pdo;
@@ -97,13 +97,6 @@ namespace Logic.TypesProducts
         }
         #endregion
 
-        #region Constructor
 
-        public Consommable()
-        {
-            price_weight = 0;
-        }
-
-        #endregion
     }
 }

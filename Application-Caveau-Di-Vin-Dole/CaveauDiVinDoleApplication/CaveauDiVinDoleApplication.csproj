@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewsModel\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj" />
   </ItemGroup>
 

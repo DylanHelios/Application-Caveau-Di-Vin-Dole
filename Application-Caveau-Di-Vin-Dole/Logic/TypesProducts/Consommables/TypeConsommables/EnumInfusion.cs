@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logic.TypesProducts
+namespace Logic.TypesProducts.Consommables.TypeConsommables
 {
-    public enum EnumTypeProduct
+    public enum EnumInfusion
     {
-        Consommable, ArtofTable, Face
+        CAFE, THE, MATE
     }
 }
